@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" fill="none">
+  <defs>
+    <linearGradient id="plate" x1="71" x2="350" y1="252" y2="294" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9D6B44"/>
+      <stop offset=".48" stop-color="#F2D49B"/>
+      <stop offset="1" stop-color="#8A5739"/>
+    </linearGradient>
+    <linearGradient id="cakeTop" x1="112" x2="304" y1="143" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1D4"/>
+      <stop offset=".5" stop-color="#F4D9B7"/>
+      <stop offset="1" stop-color="#D9A98B"/>
+    </linearGradient>
+    <linearGradient id="cakeSide" x1="121" x2="301" y1="161" y2="242" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8E5C9"/>
+      <stop offset=".45" stop-color="#DAB08D"/>
+      <stop offset="1" stop-color="#A96F5D"/>
+    </linearGradient>
+    <linearGradient id="icing" x1="119" x2="296" y1="157" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6E6"/>
+      <stop offset=".55" stop-color="#F8D9C3"/>
+      <stop offset="1" stop-color="#E5B7A7"/>
+    </linearGradient>
+    <linearGradient id="candle" x1="151" x2="173" y1="63" y2="131" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1C5"/>
+      <stop offset=".5" stop-color="#DAAD72"/>
+      <stop offset="1" stop-color="#A66B4E"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="126" x2="305" y1="253" y2="278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B47C46"/>
+      <stop offset=".48" stop-color="#FFE1A0"/>
+      <stop offset="1" stop-color="#9C643E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 85 -145 0 210 270)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8B86D" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#E8B86D" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" width="1.4" height="1.5" x="-.2" y="-.2" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <ellipse cx="210" cy="270" fill="url(#glow)" rx="155" ry="43"/>
+  <ellipse cx="210" cy="274" fill="#07050D" fill-opacity=".65" filter="url(#shadow)" rx="121" ry="20"/>
+  <path d="M69 256c0-7 63-18 141-18s141 11 141 18v12c0 9-63 17-141 17S69 277 69 268v-12Z" fill="url(#plate)" stroke="#F9DFAC" stroke-opacity=".58" stroke-width="2"/>
+  <ellipse cx="210" cy="255" fill="#F6D8A1" fill-opacity=".75" rx="141" ry="22"/>
+  <ellipse cx="210" cy="251" fill="url(#gold)" rx="131" ry="17"/>
+  <path d="M121 164c0-9 40-17 89-17s89 8 89 17v78c0 12-40 22-89 22s-89-10-89-22v-78Z" fill="url(#cakeSide)" stroke="#F7D9B2" stroke-opacity=".65" stroke-width="1.5"/>
+  <ellipse cx="210" cy="164" fill="url(#cakeTop)" stroke="#FFF0D5" stroke-opacity=".8" stroke-width="1.5" rx="89" ry="24"/>
+  <path d="M121 166c14 8 19 8 28 0 8-7 14-7 22 0 8 8 15 8 23 0 8-8 15-8 23 0 8 8 15 8 23 0 8-8 15-8 23 0 9 8 15 8 24 0 5-5 10-7 15-6v17c-8-3-12-1-18 5-9 8-17 8-26 0-8-7-13-7-21 0-9 8-18 8-27 0-8-7-13-7-21 0-9 8-18 8-27 0-8-7-13-7-21 0-9 8-18 8-27 0-6-5-10-6-16-4v-12Z" fill="url(#icing)"/>
+  <path d="M131 208c20 9 45 13 79 13 34 0 60-4 79-13v27c0 11-37 21-79 21s-79-10-79-21v-27Z" fill="#F7E5CB" fill-opacity=".18"/>
+  <path d="M156 145V78c0-3 2-5 5-5h13c3 0 5 2 5 5v67" fill="url(#candle)" stroke="#F9E5BD" stroke-opacity=".8" stroke-width="1.5"/>
+  <path d="M201 141V57c0-3 2-5 5-5h8c3 0 5 2 5 5v84" fill="url(#candle)" stroke="#F9E5BD" stroke-opacity=".8" stroke-width="1.5"/>
+  <path d="M241 145V78c0-3 2-5 5-5h13c3 0 5 2 5 5v67" fill="url(#candle)" stroke="#F9E5BD" stroke-opacity=".8" stroke-width="1.5"/>
+  <path d="M156 91h23M156 108h23M201 74h18M201 94h18M241 91h23M241 108h23" stroke="#FFF4DB" stroke-opacity=".62" stroke-width="4"/>
+  <path d="M162 72v-8m45-8v-8m45 24v-8" stroke="#4D3025" stroke-linecap="round" stroke-width="2"/>
+  <path d="M152 164c3-7 8-9 13-3m39 4c3-7 8-9 13-3m38 4c3-7 8-9 13-3" stroke="#FFF4E5" stroke-linecap="round" stroke-opacity=".75" stroke-width="2"/>
+  <circle cx="105" cy="222" r="3" fill="#F4D392"/>
+  <circle cx="319" cy="226" r="2.5" fill="#F4D392"/>
+  <path d="m94 191 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Zm228 8 1.5 3.5L327 204l-3.5 1.5L322 209l-1.5-3.5L317 204l3.5-1.5 1.5-3.5Z" fill="#F3D69C" fill-opacity=".8"/>
+</svg>

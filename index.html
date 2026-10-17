@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#100c19" />
+    <meta
+      name="description"
+      content="A little birthday magic is waiting. Tap to unlock your special surprise."
+    />
+    <title>A Little Birthday Magic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20261017-2" />
+    <script src="script.js?v=20261017-2" defer></script>
+  </head>
+  <body>
+    <canvas class="starfield" aria-hidden="true"></canvas>
+    <div class="ambient ambient--rose" aria-hidden="true"></div>
+    <div class="ambient ambient--gold" aria-hidden="true"></div>
+    <div class="ambient ambient--violet" aria-hidden="true"></div>
+    <canvas class="cake-fireworks" aria-hidden="true"></canvas>
+
+    <main class="scene">
+      <div class="scene__topline reveal" style="--delay: 80ms">
+        <span class="topline__sparkle" aria-hidden="true">✳</span>
+        <span>A MOMENT MADE JUST FOR YOU</span>
+        <span class="topline__sparkle" aria-hidden="true">✳</span>
+      </div>
+
+      <section class="reveal-wrap" aria-labelledby="headline">
+        <article class="reveal-card">
+          <div class="card__sheen" aria-hidden="true"></div>
+          <div class="card__content">
+            <div class="edition-badge reveal" style="--delay: 180ms">
+              <span class="badge__dot" aria-hidden="true"></span>
+              SPECIAL REVEAL <span class="badge__divider">·</span> VOL. 1
+            </div>
+
+            <div class="key-art reveal" style="--delay: 300ms" aria-hidden="true">
+              <span class="key-art__halo"></span>
+              <span class="key-art__orbit key-art__orbit--one"></span>
+              <span class="key-art__orbit key-art__orbit--two"></span>
+              <svg class="key-art__icon" viewBox="0 0 96 96" fill="none">
+                <path
+                  d="M48 78S19 60.4 19 39.7C19 28.8 27.1 21 37 21c5.5 0 9 2.9 11 6.1 2-3.2 5.5-6.1 11-6.1 9.9 0 18 7.8 18 18.7C77 60.4 48 78 48 78Z"
+                  stroke="url(#heartStroke)"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M47.5 39.5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15Z"
+                  stroke="#F6D9B7"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M53.2 51.8 67 65.6m-4.8-4.8 4.3-4.3m-9.1-.4 4.3-4.3"
+                  stroke="#F6D9B7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                />
+                <circle cx="48" cy="47" r="28" stroke="#F5CFA8" stroke-opacity=".13" />
+                <defs>
+                  <linearGradient id="heartStroke" x1="24" x2="75" y1="28" y2="74" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F8D1AF" />
+                    <stop offset=".48" stop-color="#F5AFC0" />
+                    <stop offset="1" stop-color="#D99C6B" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="key-art__glint key-art__glint--one">✦</span>
+              <span class="key-art__glint key-art__glint--two">·</span>
+            </div>
+
+            <p class="eyebrow reveal" style="--delay: 430ms">A LITTLE BIRD TOLD US…</p>
+            <h1 class="headline reveal" id="headline" style="--delay: 530ms">
+              Hold on<span class="headline__pause">...</span><br />
+              <span class="headline__soft">Today isn't just</span><br />
+              a regular day<span class="headline__period">.</span>
+            </h1>
+            <p class="subtitle reveal" style="--delay: 680ms">
+              Someone special was born today.<br class="desktop-break" />
+              Let's see if this key unlocks your surprise<span class="subtitle__period">...</span>
+            </p>
+
+            <div class="action-area reveal" style="--delay: 830ms">
+              <button class="unlock-button" type="button">
+                <span class="button__shine" aria-hidden="true"></span>
+                <span class="button__label">Tap to Unlock the Magic</span>
+                <span class="button__star" aria-hidden="true">✦</span>
+                <span class="button__ripple" aria-hidden="true"></span>
+              </button>
+              <p class="action-hint"><span aria-hidden="true">♡</span> Made with a little extra love</p>
+            </div>
+          </div>
+          <div class="card__bottom-rule" aria-hidden="true"><span></span></div>
+        </article>
+      </section>
+
+      <div class="scene__footer reveal" style="--delay: 1020ms">
+        <span class="footer__line"></span>
+        <span>YOUR DAY. YOUR MAGIC.</span>
+        <span class="footer__line"></span>
+      </div>
+
+      <div class="afterglow" aria-live="polite" aria-hidden="true">
+        <span class="afterglow__star" aria-hidden="true">✦</span>
+        <p class="afterglow__title">And so the magic begins.</p>
+        <p class="afterglow__note">Page one unlocked <span>·</span> Your next surprise is ready</p>
+      </div>
+    </main>
+
+    <section class="timeline-scene" id="timeline-page" aria-labelledby="timeline-title" hidden inert>
+      <div class="timeline-shell">
+        <header class="timeline-header">
+          <div class="timeline-badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            TIMELINE OF HAPPINESS <span class="badge__divider">·</span> STEP 02
+          </div>
+          <p class="timeline-kicker">A LIFE IN LITTLE LIGHTS</p>
+          <h1 class="timeline-title" id="timeline-title">
+            Do you have any idea<br class="wide-break" />
+            how much joy you've spread?
+          </h1>
+          <p class="timeline-intro">A few beautiful numbers, for the person who makes them matter.</p>
+        </header>
+
+        <div class="stats-grid" aria-label="A timeline of happiness">
+          <article class="stat-card stat-card--rose" style="--stat-delay: 120ms">
+            <span class="stat-card__icon" aria-hidden="true">✧</span>
+            <p class="stat-card__label">A one-of-a-kind soul</p>
+            <p class="stat-card__value"><span data-count="1" data-suffix="">0</span></p>
+            <p class="stat-card__caption">NO ONE ELSE LIKE YOU</p>
+            <span class="stat-card__glow" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--gold" style="--stat-delay: 240ms">
+            <span class="stat-card__icon" aria-hidden="true">☼</span>
+            <p class="stat-card__label">Days making the world brighter</p>
+            <p class="stat-card__value"><span data-count="7300" data-suffix="+">0</span></p>
+            <span class="stat-card__glow" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--gold" style="--stat-delay: 360ms">
+            <span class="stat-card__icon" aria-hidden="true">✦</span>
+            <p class="stat-card__label">Hours of spreading smiles</p>
+            <p class="stat-card__value"><span data-count="175200" data-suffix="+">0</span></p>
+            <span class="stat-card__glow" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card stat-card--rose stat-card--memories" style="--stat-delay: 480ms">
+            <span class="stat-card__icon" aria-hidden="true">♡</span>
+            <p class="stat-card__label">Uncountable core memories created</p>
+            <p class="stat-card__infinity" aria-label="Infinite">∞</p>
+            <span class="stat-card__glow" aria-hidden="true"></span>
+          </article>
+        </div>
+
+        <div class="memory-area" style="--stat-delay: 580ms">
+          <p class="memory-prompt">ONE THING THE NUMBERS CAN'T SAY</p>
+          <button class="memory-card" type="button" aria-pressed="false" aria-label="Reveal why today is special">
+            <span class="memory-card__inner">
+              <span class="memory-card__face memory-card__front">
+                <span class="memory-card__ornament" aria-hidden="true">✦</span>
+                <span class="memory-card__front-copy">Tap the card to reveal why<br />today hits different...</span>
+                <span class="memory-card__tap-hint">A LITTLE SECRET <span aria-hidden="true">↗</span></span>
+              </span>
+              <span class="memory-card__face memory-card__back" aria-hidden="true">
+                <span class="memory-card__heart" aria-hidden="true">♡</span>
+                <span class="memory-card__message">Out of all those days, today is my absolute favorite because it brought <em>YOU</em> into the world.</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <footer class="timeline-footer">
+          <button class="unlock-button timeline-next" type="button">
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Explore your birthday wishes</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="timeline-footnote"><span aria-hidden="true">✧</span> AND THIS IS JUST THE BEGINNING <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+    </section>
+
+    <section class="wish-scene" id="wish-page" aria-labelledby="wish-title" hidden inert>
+      <div class="wish-shell">
+        <header class="wish-header">
+          <div class="timeline-badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            A WISH FOR YOU <span class="badge__divider">·</span> STEP 03
+          </div>
+          <p class="timeline-kicker">A LITTLE SOMETHING TO CARRY WITH YOU</p>
+          <h1 class="timeline-title" id="wish-title">If I could wish you one thing...</h1>
+          <p class="timeline-intro">Actually, I can’t choose just one. Which wish feels like you?</p>
+        </header>
+
+        <div class="wish-options" role="group" aria-label="Choose a birthday wish">
+          <button class="wish-option" type="button" data-wish="joy" aria-pressed="false">
+            <span class="wish-option__icon" aria-hidden="true">☼</span>
+            <span class="wish-option__copy">
+              <span class="wish-option__title">A little more joy</span>
+              <span class="wish-option__detail">In the ordinary, lovely moments.</span>
+            </span>
+            <span class="wish-option__check" aria-hidden="true">✓</span>
+          </button>
+          <button class="wish-option" type="button" data-wish="adventure" aria-pressed="false">
+            <span class="wish-option__icon" aria-hidden="true">✧</span>
+            <span class="wish-option__copy">
+              <span class="wish-option__title">A world of adventure</span>
+              <span class="wish-option__detail">New places, bright beginnings, big dreams.</span>
+            </span>
+            <span class="wish-option__check" aria-hidden="true">✓</span>
+          </button>
+          <button class="wish-option" type="button" data-wish="love" aria-pressed="false">
+            <span class="wish-option__icon" aria-hidden="true">♡</span>
+            <span class="wish-option__copy">
+              <span class="wish-option__title">All the love you deserve</span>
+              <span class="wish-option__detail">Today, tomorrow, and every day after.</span>
+            </span>
+            <span class="wish-option__check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+
+        <div class="wish-reveal" aria-live="polite" hidden>
+          <span class="wish-reveal__sparkle" aria-hidden="true">✦</span>
+          <p class="wish-reveal__message"></p>
+        </div>
+
+        <footer class="timeline-footer wish-footer">
+          <button class="unlock-button wish-next" type="button" disabled>
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">On to the next little surprise</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="timeline-footnote"><span aria-hidden="true">✧</span> THERE'S MORE MAGIC AHEAD <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+    </section>
+
+    <section class="constellation-scene" id="constellation-page" aria-labelledby="constellation-title" hidden inert>
+      <div class="constellation-dust" aria-hidden="true"></div>
+      <div class="constellation-shell">
+        <header class="constellation-header">
+          <div class="timeline-badge constellation-badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            ECHOES OF YOUR SOUL <span class="badge__divider">·</span> STEP 04
+          </div>
+          <p class="timeline-kicker">A SKY FULL OF REASONS</p>
+          <h1 class="constellation-title" id="constellation-title">
+            Out of 8 billion people,<br class="constellation-wide-break" />
+            here is why you shine brightest...
+          </h1>
+          <p class="timeline-intro">Every star has a story. Tap one to discover yours.</p>
+          <div class="trait-progress" role="status" aria-live="polite">
+            <span class="trait-progress__symbol" aria-hidden="true">✧</span>
+            <span>TRAITS DISCOVERED</span>
+            <strong><span class="trait-progress__count">0</span><span class="trait-progress__total"> / 4</span></strong>
+          </div>
+        </header>
+
+        <div class="constellation-map" aria-label="Four qualities that make you shine">
+          <svg class="constellation-lines" viewBox="0 0 400 400" aria-hidden="true">
+            <path d="M200 44 341 151 290 333 110 333 59 151 200 44Z" />
+            <path d="M200 200 200 44m0 156 141-49m-141 49 90 133m-90-133-90 133m90-133L59 151" />
+          </svg>
+          <span class="constellation-map__nebula" aria-hidden="true"></span>
+          <div class="constellation-core" aria-hidden="true">
+            <span class="constellation-core__halo"></span>
+            <span class="constellation-core__ring constellation-core__ring--one"></span>
+            <span class="constellation-core__ring constellation-core__ring--two"></span>
+            <span class="constellation-core__heart">♡</span>
+            <span class="constellation-core__spark constellation-core__spark--one">✦</span>
+            <span class="constellation-core__spark constellation-core__spark--two">·</span>
+          </div>
+
+          <button class="trait-orb trait-orb--heart" type="button" data-trait="heart" aria-pressed="false" aria-label="Discover Your Pure Heart">
+            <span class="trait-orb__glow"></span><span class="trait-orb__symbol" aria-hidden="true">♡</span>
+            <span class="trait-orb__name">Your Pure Heart</span><span class="trait-orb__status">TAP TO DISCOVER</span>
+          </button>
+          <button class="trait-orb trait-orb--laugh" type="button" data-trait="laugh" aria-pressed="false" aria-label="Discover Your Healing Laugh">
+            <span class="trait-orb__glow"></span><span class="trait-orb__symbol" aria-hidden="true">☼</span>
+            <span class="trait-orb__name">Your Healing Laugh</span><span class="trait-orb__status">TAP TO DISCOVER</span>
+          </button>
+          <button class="trait-orb trait-orb--calm" type="button" data-trait="calm" aria-pressed="false" aria-label="Discover Your Unmatched Calm">
+            <span class="trait-orb__glow"></span><span class="trait-orb__symbol" aria-hidden="true">✧</span>
+            <span class="trait-orb__name">Your Unmatched Calm</span><span class="trait-orb__status">TAP TO DISCOVER</span>
+          </button>
+          <button class="trait-orb trait-orb--presence" type="button" data-trait="presence" aria-pressed="false" aria-label="Discover Your Magic Presence">
+            <span class="trait-orb__glow"></span><span class="trait-orb__symbol" aria-hidden="true">✦</span>
+            <span class="trait-orb__name">Your Magic Presence</span><span class="trait-orb__status">TAP TO DISCOVER</span>
+          </button>
+        </div>
+
+        <div class="trait-master" aria-live="polite" hidden>
+          <span class="trait-master__ornament" aria-hidden="true">✧</span>
+          <p>Every single detail about you is my favorite detail.</p>
+          <span class="trait-master__ornament" aria-hidden="true">✧</span>
+        </div>
+
+        <footer class="timeline-footer constellation-footer">
+          <button class="unlock-button constellation-next" type="button" disabled>
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Light the Candles</span>
+            <span class="constellation-next__step">(STEP 05)</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="timeline-footnote"><span aria-hidden="true">✧</span> YOUR UNIVERSE IS STILL UNFOLDING <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+
+      <div class="trait-dialog" role="dialog" aria-modal="true" aria-labelledby="trait-dialog-title" aria-describedby="trait-dialog-message" hidden>
+        <button class="trait-dialog__backdrop" type="button" aria-label="Close trait details"></button>
+        <article class="trait-dialog__card">
+          <button class="trait-dialog__close" type="button" aria-label="Close trait details">×</button>
+          <span class="trait-dialog__halo" aria-hidden="true"></span>
+          <span class="trait-dialog__icon" aria-hidden="true"></span>
+          <p class="trait-dialog__eyebrow">A LITTLE PIECE OF YOUR MAGIC</p>
+          <h2 class="trait-dialog__title" id="trait-dialog-title"></h2>
+          <p class="trait-dialog__message" id="trait-dialog-message"></p>
+          <button class="trait-dialog__done" type="button">Keep this close <span aria-hidden="true">✦</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="cake-scene" id="cake-page" aria-labelledby="cake-title" hidden inert>
+      <div class="cake-ambient cake-ambient--gold" aria-hidden="true"></div>
+      <div class="cake-ambient cake-ambient--rose" aria-hidden="true"></div>
+      <div class="cake-shell">
+        <header class="cake-header">
+          <div class="cake-badge">
+            <span class="cake-badge__spark" aria-hidden="true">✦</span>
+            THE ROYAL CELEBRATION <span>·</span> STEP 05
+            <span class="cake-badge__spark" aria-hidden="true">✦</span>
+          </div>
+          <p class="cake-eyebrow">A MOMENT WORTH MAKING A WISH FOR</p>
+          <h1 class="cake-title" id="cake-title">Close your eyes, make a wish<br class="cake-wide-break" /> &amp; blow out the candles...</h1>
+          <p class="cake-intro">Take a little breath. This birthday moment is all yours.</p>
+        </header>
+
+        <div class="cake-stage">
+          <span class="cake-stage__halo" aria-hidden="true"></span>
+          <span class="cake-stage__floor-glow" aria-hidden="true"></span>
+          <img class="birthday-cake" src="cake.svg" alt="A golden birthday cake with three candles" width="420" height="320" decoding="async" fetchpriority="high" />
+          <div class="cake-flames" aria-hidden="true">
+            <span class="cake-flame cake-flame--left"><i></i></span>
+            <span class="cake-flame cake-flame--center"><i></i></span>
+            <span class="cake-flame cake-flame--right"><i></i></span>
+          </div>
+          <div class="cake-smoke" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="cake-stage__spark cake-stage__spark--one" aria-hidden="true">✦</span>
+          <span class="cake-stage__spark cake-stage__spark--two" aria-hidden="true">✧</span>
+        </div>
+
+        <div class="cake-controls">
+          <button class="unlock-button cake-blow" type="button">
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="cake-blow__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="9" y="2.75" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M5.75 11.5a6.25 6.25 0 0 0 12.5 0M12 17.75v3.5m-3.5 0h7" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/>
+              </svg>
+            </span>
+            <span class="button__label">Tap to Blow Out Candles</span>
+            <span class="cake-blow__breath" aria-hidden="true">💨</span>
+          </button>
+          <button class="cake-mic" type="button">
+            <span class="cake-mic__dot" aria-hidden="true"></span>
+            <span class="cake-mic__label">Enable microphone blow detection</span>
+          </button>
+          <p class="cake-mic-status" role="status" aria-live="polite">Tap the button, or enable your mic to blow them out for real.</p>
+        </div>
+
+        <section class="birthday-card" aria-labelledby="birthday-card-title" hidden>
+          <span class="birthday-card__ornament birthday-card__ornament--one" aria-hidden="true">✧</span>
+          <span class="birthday-card__ornament birthday-card__ornament--two" aria-hidden="true">✦</span>
+          <p class="birthday-card__eyebrow">TODAY, THE WHOLE SKY CELEBRATES YOU</p>
+          <h2 id="birthday-card-title">HAPPY BIRTHDAY TO MY FAVORITE PERSON! <span class="emoji" aria-hidden="true">✨</span></h2>
+          <p class="birthday-card__message">May your year ahead be as bright, magical, and priceless as you are. Today is all about celebrating the wonderful soul you are!</p>
+          <span class="birthday-card__rule" aria-hidden="true"></span>
+          <p class="birthday-card__signoff">With so much love <span aria-hidden="true">♡</span></p>
+        </section>
+
+        <footer class="cake-footer">
+          <button class="unlock-button cake-next" type="button" disabled>
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Open Secret Letter</span>
+            <span class="cake-next__step">(STEP 06)</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="cake-footer__note"><span aria-hidden="true">✧</span> THERE'S STILL MORE TO CELEBRATE <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+    </section>
+
+    <section class="envelope-scene" id="envelope-page" aria-labelledby="envelope-title" hidden inert>
+      <div class="envelope-bokeh envelope-bokeh--one" aria-hidden="true"></div>
+      <div class="envelope-bokeh envelope-bokeh--two" aria-hidden="true"></div>
+      <div class="envelope-dust" aria-hidden="true"></div>
+
+      <div class="envelope-shell">
+        <header class="envelope-header">
+          <div class="envelope-badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            CONFIDENTIAL <span>·</span> STEP 06
+          </div>
+          <p class="envelope-eyebrow">SEALED WITH A LITTLE EXTRA LOVE</p>
+          <h1 class="envelope-title" id="envelope-title">A message meant only for your eyes...</h1>
+          <p class="envelope-intro">Some things are better said in a letter. This one is just for you.</p>
+        </header>
+
+        <div class="envelope-experience">
+          <div class="envelope-display">
+            <div class="envelope-wrap">
+              <div class="envelope-back" aria-hidden="true"></div>
+              <div class="envelope-letter-tease" aria-hidden="true">
+                <span>JUST FOR YOU</span>
+                <span class="envelope-letter-tease__mark">♡</span>
+              </div>
+              <div class="envelope-pocket" aria-hidden="true">
+                <span class="envelope-pocket__left"></span>
+                <span class="envelope-pocket__right"></span>
+                <span class="envelope-pocket__bottom"></span>
+                <span class="envelope-pocket__shine"></span>
+              </div>
+              <div class="envelope-flap" aria-hidden="true">
+                <span class="envelope-flap__face envelope-flap__face--front"></span>
+                <span class="envelope-flap__face envelope-flap__face--back"></span>
+              </div>
+              <button class="envelope-seal" type="button" aria-label="Break the wax seal and open your secret letter">
+                <span class="envelope-seal__shine" aria-hidden="true"></span>
+                <span class="envelope-seal__half envelope-seal__half--left" aria-hidden="true"></span>
+                <span class="envelope-seal__half envelope-seal__half--right" aria-hidden="true"></span>
+                <span class="envelope-seal__crest" aria-hidden="true">♡</span>
+                <span class="envelope-seal__crown" aria-hidden="true">♛</span>
+              </button>
+              <span class="envelope-corner envelope-corner--one" aria-hidden="true">✦</span>
+              <span class="envelope-corner envelope-corner--two" aria-hidden="true">✧</span>
+            </div>
+
+            <div class="letter-reveal" aria-hidden="true" inert>
+              <article class="letter-paper" aria-labelledby="letter-greeting">
+                <div class="letter-paper__texture" aria-hidden="true"></div>
+                <div class="letter-paper__scroll" tabindex="0" aria-label="Secret birthday letter. Read to the end to continue.">
+                  <div class="letter-paper__topline"><span>✧</span> A NOTE FROM THE HEART <span>✧</span></div>
+                  <p class="letter-emoji-row" aria-hidden="true">
+                    <span class="emoji">🎈</span><span class="emoji">🎁</span><span class="emoji">✨</span><span class="emoji">💖</span><span class="emoji">👑</span><span class="emoji">🥂</span>
+                  </p>
+                  <p class="letter-greeting" id="letter-greeting">Dearest Special One, <span class="emoji letter-emoji">👑✨</span></p>
+                  <p>If I could pause time just to capture how bright you make the world, I’d freeze today forever. <span class="emoji letter-emoji">💖</span></p>
+                  <p>You aren't just another year older; you are a whole year more wonderful, more resilient, and infinitely more priceless to everyone around you. <span class="emoji letter-emoji">🎈✨</span></p>
+                  <p>Thank you for existing, for every unfiltered laugh we’ve shared, for your kindness, and for being the absolute highlight of my life. <span class="emoji letter-emoji">🥂💫</span></p>
+                  <p>May this year bring you endless magic, unmatched success, and all the quiet peace your heart deserves. Happy Birthday! <span class="emoji letter-emoji">🎁✨</span></p>
+                  <p class="letter-signoff">Always cheering for you, <span aria-hidden="true">♡</span></p>
+                  <div class="letter-paper__end" aria-label="End of letter">WITH LOVE, ALWAYS <span aria-hidden="true">✦</span></div>
+                </div>
+                <span class="letter-paper__corner" aria-hidden="true">❧</span>
+              </article>
+            </div>
+          </div>
+          <p class="envelope-seal-hint">TAP OR SWIPE THE SEAL TO OPEN</p>
+
+          <p class="letter-read-hint" aria-live="polite">Your letter is waiting inside. Break the seal when you're ready.</p>
+        </div>
+
+        <footer class="envelope-footer">
+          <button class="unlock-button envelope-next" type="button" disabled>
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Walk Down Memory Lane</span>
+            <span class="envelope-next__step">(STEP 07)</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="envelope-footer__note"><span aria-hidden="true">✧</span> THERE ARE MORE MEMORIES AHEAD <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+      <div class="envelope-particle-layer" aria-hidden="true"></div>
+    </section>
+
+    <section class="collector-scene" id="collector-page" aria-labelledby="collector-title" hidden inert>
+      <div class="collector-glow collector-glow--rose" aria-hidden="true"></div>
+      <div class="collector-glow collector-glow--gold" aria-hidden="true"></div>
+      <canvas class="collector-canvas" aria-hidden="true"></canvas>
+
+      <div class="collector-shell">
+        <header class="collector-header">
+          <div class="collector-badge"><span class="badge__dot" aria-hidden="true"></span> ROYAL COLLECTOR <span>·</span> STEP 07</div>
+          <h1 class="collector-title" id="collector-title">Collect the Birthday Blessings <span aria-hidden="true">✦</span></h1>
+          <p class="collector-intro">Tap the floating birthday gifts to collect heartfelt greetings!</p>
+          <div class="collector-progress" role="status" aria-live="polite">
+            <span class="collector-progress__label">BLESSINGS COLLECTED</span>
+            <span class="collector-progress__count"><span>0</span> / 5</span>
+            <span class="collector-progress__track" aria-hidden="true"><span></span></span>
+          </div>
+        </header>
+
+        <div class="collector-arena" id="game-arena" role="group" aria-label="Birthday gift collection game. Activate a floating gift to collect a blessing." tabindex="0"></div>
+
+        <div class="collector-play-hint" aria-hidden="true">
+          <span>✧</span> TAP A FLOATING GIFT TO COLLECT IT <span>✧</span>
+        </div>
+
+        <section class="collector-grand" aria-labelledby="collector-grand-title" hidden>
+          <p class="collector-grand__eyebrow">A SKY FULL OF GOOD WISHES</p>
+          <h2 id="collector-grand-title"><span class="emoji">👑</span> BLESSINGS FULLY UNLOCKED! <span class="emoji">✨</span></h2>
+          <p class="collector-grand__final-greeting"></p>
+          <p>May your life always be filled with warmth, endless love, and unbounded joy. May you keep collecting precious greetings, radiant smiles, and unforgettable memories from everyone whose life you touch!</p>
+          <span class="collector-grand__ornament" aria-hidden="true">✦　♡　✦</span>
+        </section>
+
+        <footer class="collector-footer" hidden>
+          <button class="unlock-button collector-next" type="button" disabled>
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Proceed to the Grand Finale</span>
+            <span class="collector-next__step">(STEP 08)</span>
+            <span class="button__star" aria-hidden="true">➔</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="collector-footer__note"><span aria-hidden="true">✧</span> ONE LAST SURPRISE AWAITS <span aria-hidden="true">✧</span></p>
+        </footer>
+      </div>
+
+      <div class="collector-greeting" role="dialog" aria-modal="true" aria-labelledby="collector-greeting-title" hidden>
+        <button class="collector-greeting__backdrop" type="button" aria-label="Close greeting"></button>
+        <article class="collector-greeting__card">
+          <span class="collector-greeting__spark" aria-hidden="true">✧</span>
+          <p class="collector-greeting__eyebrow">A BLESSING JUST FOR YOU</p>
+          <h2 id="collector-greeting-title">A little birthday wish</h2>
+          <p class="collector-greeting__message"></p>
+          <button class="unlock-button collector-greeting__continue" type="button">
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Keep collecting</span>
+            <span class="button__star" aria-hidden="true">✦</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="finale-scene" id="finale-page" aria-labelledby="finale-title" hidden inert>
+      <canvas class="finale-canvas" aria-hidden="true"></canvas>
+      <div class="finale-glow finale-glow--one" aria-hidden="true"></div>
+      <div class="finale-glow finale-glow--two" aria-hidden="true"></div>
+
+      <article class="finale-card">
+        <div class="finale-card__sheen" aria-hidden="true"></div>
+        <div class="finale-content">
+          <div class="finale-badge"><span aria-hidden="true">✦</span> THE GRAND FINALE <span>·</span> FOREVER CELEBRATION <span aria-hidden="true">✦</span></div>
+          <p class="finale-eyebrow">A DAY AS RADIANT AS YOU</p>
+          <h1 class="finale-title" id="finale-title">HAPPY BIRTHDAY! <span class="emoji" aria-hidden="true">👑✨</span></h1>
+
+          <div class="finale-message">
+            <p>On this incredibly special day, I just want to remind you how deeply valued, loved, and cherished you are. <span class="emoji finale-emoji">💖✨</span></p>
+            <p>May your path ahead be illuminated with endless opportunities, unbounded happiness, unwavering health, and the fulfillment of every single dream you hold in your heart. <span class="emoji finale-emoji">🥂💫</span></p>
+            <p>Thank you for being such an extraordinary presence, for bringing warmth into every room you enter, and for simply being YOU. Happy Birthday once again! <span class="emoji finale-emoji">🎈🎁✨</span></p>
+          </div>
+
+          <div class="finale-signature">
+            <span class="finale-signature__rule" aria-hidden="true"></span>
+            <p>With all my warmest thoughts,</p>
+            <div class="finale-signature__name">M Nouman Habib <span class="emoji" aria-hidden="true">👑</span></div>
+            <span class="finale-signature__heart" aria-hidden="true">♡</span>
+          </div>
+
+          <button class="unlock-button finale-next" type="button">
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">One Last Note</span>
+            <span class="emoji finale-next__icon" aria-hidden="true">🕊️</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+
+        </div>
+      </article>
+    </section>
+
+    <section class="apology-scene" id="apology-page" aria-labelledby="apology-title" hidden inert>
+      <div class="apology-ambient apology-ambient--rose" aria-hidden="true"></div>
+      <div class="apology-ambient apology-ambient--gold" aria-hidden="true"></div>
+      <div class="apology-dust" aria-hidden="true"></div>
+
+      <article class="apology-card">
+        <span class="apology-card__sheen" aria-hidden="true"></span>
+        <div class="apology-content">
+          <div class="apology-badge"><span aria-hidden="true">✧</span> FROM THE HEART <span>·</span> FINAL NOTE <span class="emoji" aria-hidden="true">🕊️</span></div>
+          <p class="apology-eyebrow">A NOTE I WANTED TO LEAVE WITH YOU</p>
+          <h1 class="apology-title" id="apology-title">I Am Truly Sorry... <span class="emoji" aria-hidden="true">🕊️</span></h1>
+
+          <div class="apology-message">
+            <p>I am really sorry to disturb you again. I know you might be upset or angry with me for reaching out like this...</p>
+            <p>But since today is such a deeply special day of your life, my heart just couldn't stay quiet without sending you my warmest, most genuine wishes.</p>
+            <p>I sincerely apologize for disturbing your peace. Please forgive me if this felt uncalled for.</p>
+          </div>
+
+          <div class="apology-thanks">
+            <span class="apology-thanks__rule" aria-hidden="true"></span>
+            <h2>THANK YOU FOR EVERYTHING! <span class="emoji" aria-hidden="true">✨</span></h2>
+            <p>For all the memories, the laughter, and for just being you.</p>
+            <span class="emoji apology-thanks__heart" aria-hidden="true">💖</span>
+          </div>
+
+          <button class="unlock-button apology-replay" type="button">
+            <span class="button__shine" aria-hidden="true"></span>
+            <span class="button__label">Replay the Experience</span>
+            <span class="apology-replay__icon" aria-hidden="true">↺</span>
+            <span class="button__ripple" aria-hidden="true"></span>
+          </button>
+          <p class="apology-footer-note"><span aria-hidden="true">✦</span> MADE WITH SINCERITY AND CARE <span aria-hidden="true">✦</span></p>
+        </div>
+      </article>
+    </section>
+
+    <div class="particle-origin" aria-hidden="true"></div>
+  </body>
+</html>
